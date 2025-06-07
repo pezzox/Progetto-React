@@ -1,0 +1,30 @@
+
+.summary-card {
+  background-color: #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.summary-icon {
+  font-size: 32px;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #94a3b8;
+}

@@ -1,0 +1,36 @@
+
+
+.stats-page {
+  padding: 90px 0 50px 0;   // spazio sopra aumentato 
+  background-color: #0f172a;
+  min-height: 100vh;
+  color: #f8fafc;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stats-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 48px;
+  justify-content: space-between;
+}
+
+.chart-card {
+  background-color: #1e293b;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.recent-sessions {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+

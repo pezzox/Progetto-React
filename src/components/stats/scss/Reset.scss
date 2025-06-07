@@ -1,0 +1,26 @@
+.reset-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.reset-button {
+  background-color: #f56565;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background-color: #e53e3e;
+  }
+}
+
+.reset-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #48bb78;
+  font-weight: bold;
+}

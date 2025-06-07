@@ -1,0 +1,30 @@
+@use './variables' as *;
+@use './globals' as *;
+
+// Pages
+@use '../pages/scss/Home.scss' as *;
+@use '../pages/scss/Sessions.scss' as *;
+@use '../pages/scss/Stats.scss' as *;
+@use '../pages/scss/Timer.scss' as *; // ← se esiste davvero in una cartella Timer
+
+// UI Components
+@use '../components/UI/scss/MeditationTimer.scss' as *;
+@use '../components/UI/scss/Reset.scss' as *;
+
+// Home Components
+@use '../components/Home/scss/HeroSection.scss' as *;
+@use '../components/Home/scss/FeaturesSection.scss' as *;
+@use '../components/Home/scss/BenefitsSection.scss' as *;
+@use '../components/Home/scss/QuoteSection.scss' as *;
+
+// Sessions Components
+@use '../components/Sessions/scss/SessionCard.scss' as *;
+@use '../components/Sessions/scss/FullSessionView.scss' as *;
+@use '../components/Sessions/scss/MeditationPopup.scss' as *;
+
+// Stats Components
+@use '../components/Stats/scss/SummaryCard.scss' as *;
+@use '../components/Stats/scss/DailyChart.scss' as *;
+@use '../components/Stats/scss/SessionList.scss' as *;
+@use '../components/Stats/scss/SoundDistribution.scss' as *;
+
