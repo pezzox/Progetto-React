@@ -1,6 +1,7 @@
 {
   "name": "mindful-moments",
   "private": true,
+  "homepage": "https://pezzox.github.io/Progetto-React",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
