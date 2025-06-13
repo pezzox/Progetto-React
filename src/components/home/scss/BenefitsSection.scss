@@ -1,53 +1,59 @@
+@use '../../../styles/variables' as v;
 
-
-
+// Main section with vertical padding and gradient background
 .benefits-section {
-  padding: $section-padding 0;
-  background: linear-gradient(to bottom, $background-light, $white);
-  
+  padding: v.$section-padding 0;
+  background: linear-gradient(to bottom, v.$background-light, v.$white);
+
+  // Section header centered with spacing
   .section-title {
     text-align: center;
     margin-bottom: 60px;
-    
+
+    // Main heading text
     h2 {
       font-size: 2.5rem;
-      color: $text-dark;
+      color: v.$text-dark;
       margin-bottom: 20px;
-      
-      @media (max-width: $mobile) {
+
+      @media (max-width: v.$mobile) {
         font-size: 2rem;
       }
     }
-    
+
+    // Subtitle or description below heading
     p {
       font-size: 1.2rem;
-      color: $text-light;
+      color: v.$text-light;
       max-width: 600px;
       margin: 0 auto;
     }
   }
-  
+
+  // Grid layout for benefit cards
   .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 60px;
-    
-    @media (max-width: $mobile) {
+
+    @media (max-width: v.$mobile) {
       grid-template-columns: 1fr;
       gap: 30px;
     }
-    
+
+    // Single benefit card with padding, shadow and hover effect
     .benefit-card {
-      background: $white;
-      padding: $card-padding 30px;
-      border-radius: $border-radius-lg;
+      background: v.$white;
+      padding: v.$card-padding 30px;
+      border-radius: v.$border-radius-lg;
       text-align: center;
-      box-shadow: $shadow-medium;
-      transition: all $transition-normal;
+      box-shadow: v.$shadow-medium;
+      transition: all v.$transition-normal;
       position: relative;
       overflow: hidden;
-      
+
+      // Colored top bar using gradient
       &::before {
         content: '';
         position: absolute;
@@ -55,28 +61,32 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: $gradient-primary;
+        background: v.$gradient-primary;
       }
-      
+
+      // Elevates card on hover
       &:hover {
         transform: translateY(-10px);
-        box-shadow: $shadow-heavy;
+        box-shadow: v.$shadow-heavy;
       }
-      
+
+      // Icon displayed at the top of the card
       .benefit-icon {
         font-size: 3rem;
         margin-bottom: 20px;
         display: block;
       }
-      
+
+      // Benefit title
       h3 {
         font-size: 1.5rem;
-        color: $text-dark;
+        color: v.$text-dark;
         margin-bottom: 15px;
       }
-      
+
+      // Benefit description
       p {
-        color: $text-light;
+        color: v.$text-light;
         line-height: 1.6;
       }
     }

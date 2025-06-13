@@ -1,7 +1,16 @@
 "use client"
+import { useState } from "react";
+import "./styles/main.scss";
 
-import { useState } from "react"
-import './styles/main.scss'; 
+import Home from "./pages/Home";
+import Timer from "./pages/Timer";
+import Sessions from "./pages/Sessions";
+import Stats from "./pages/Stats";
+
+import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
+
+
 
 
 function App() {
@@ -15,8 +24,6 @@ function App() {
         return <Timer />
       case "sessions":
         return <Sessions />
-      case "settings":
-        return <Settings />
       case "stats":
         return <Stats />
       default:
@@ -24,11 +31,15 @@ function App() {
     }
   }
 
-  return (
-    <Layout currentPage={currentPage} setCurrentPage={setCurrentPage}>
-      {renderPage()}
-    </Layout>
-  )
+ return (
+  <>
+    <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+    {renderPage()}
+    <Footer setCurrentPage={setCurrentPage} />
+  </>
+);
+
+
 }
 
 export default App

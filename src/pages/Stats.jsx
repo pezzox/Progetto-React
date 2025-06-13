@@ -1,12 +1,14 @@
-import SummaryCard from '../../components/Stats/SummaryCard';
-import DailyChart from '../../components/Stats/DailyChart';
-import SessionList from '../../components/Stats/SessionList';
-import SoundDistribution from '../../components/Stats/SoundDistribution';
+import { useState, useEffect } from "react"
 
+import SummaryCard from "../components/stats/SummaryCard"
+import DailyChart from "../components/stats/DailyChart"
+import SessionList from "../components/stats/SessionList"
+import SoundDistribution from "../components/stats/SoundDistribution"
 
 console.log("👀 Stats component mounted")
 
 function Stats() {
+  // Helper: assign a color to each sound type
   const getColor = (name) => {
     return {
       Silenzio: "#667eea",
@@ -17,6 +19,7 @@ function Stats() {
     }[name] || "#a0aec0"
   }
 
+  // Local state for all statistical data
   const [statsData, setStatsData] = useState({
     weeklyTotal: 0,
     dailyData: [],
@@ -26,22 +29,25 @@ function Stats() {
     totalSessions: 0,
   })
 
+  // Load and compute data on first render
   useEffect(() => {
     let sessions = []
     try {
       sessions = JSON.parse(localStorage.getItem("meditationSessions") || "[]")
     } catch (err) {
-      console.error("❌ Errore parsing localStorage:", err)
-      sessions = []
+      console.error("❌ Error parsing localStorage:", err)
     }
 
     const now = new Date()
+
+    // Get last 7 days as ISO date strings
     const past7Days = [...Array(7)].map((_, i) => {
       const date = new Date(now)
       date.setDate(now.getDate() - (6 - i))
       return date.toISOString().split("T")[0]
     })
 
+    // Build chart data: minutes per day
     const dailyData = past7Days.map((dateStr) => {
       const dayName = new Date(dateStr).toLocaleDateString("it-IT", { weekday: "short" })
       const totalMinutes = sessions
@@ -50,6 +56,7 @@ function Stats() {
       return { day: dayName, minutes: totalMinutes }
     })
 
+    // Count sessions by sound type
     const soundsCount = {}
     sessions.forEach((s) => {
       const name = {
@@ -68,6 +75,7 @@ function Stats() {
       color: getColor(name),
     }))
 
+    // Calculate streak: consecutive days with at least one session
     const uniqueDates = [...new Set(sessions.map((s) => s.date))].sort().reverse()
     let streak = 0
     for (let i = 0; i < 7; i++) {
@@ -78,6 +86,7 @@ function Stats() {
       else break
     }
 
+    // Update state with computed stats
     setStatsData({
       weeklyTotal: dailyData.reduce((sum, d) => sum + d.minutes, 0),
       dailyData,
@@ -88,6 +97,7 @@ function Stats() {
     })
   }, [])
 
+  // Helper: convert minutes to h + m
   const formatDuration = (minutes) => {
     if (minutes < 60) return `${minutes} min`
     const hours = Math.floor(minutes / 60)
@@ -98,8 +108,9 @@ function Stats() {
   return (
     <div className="stats-page">
       <div className="container">
-        <h1>📊 Statistiche Meditazione</h1>
+        <h1>Statistiche Meditazione</h1>
 
+        {/* Summary Cards */}
         <div className="stats-summary">
           <SummaryCard
             icon="🧘‍♀️"
@@ -121,16 +132,16 @@ function Stats() {
           />
         </div>
 
+        {/* Charts */}
         <div className="charts-section">
           <DailyChart data={statsData.dailyData} />
           <SoundDistribution data={statsData.soundsData} />
         </div>
 
+        {/* Recent Sessions */}
         <SessionList sessions={statsData.recentSessions} />
-      
       </div>
     </div>
-    
   )
 }
 

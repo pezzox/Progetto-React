@@ -1,3 +1,4 @@
+// Fullscreen overlay for the popup with dark background and centered content
 .popup-overlay {
   position: fixed;
   top: 0px;
@@ -7,12 +8,13 @@
   background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
-  align-items: flex-start; // per gestire padding top
-  padding-top: 80px; // spazio superiore
+  align-items: flex-start; // aligns popup at the top with padding
+  padding-top: 80px; // top spacing for breathing room
   z-index: 99;
   animation: fadeIn 300ms ease;
 }
 
+// Main popup card container
 .popup-card {
   background: #000;
   color: white;
@@ -28,12 +30,14 @@
   box-shadow: 0px 12px 48px rgba(0, 0, 0, 0.4);
 }
 
+// Header of the popup with centered content
 .popup-header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+// Circular image displayed at the top
 .popup-image {
   width: 160px;
   height: 160px;
@@ -42,6 +46,7 @@
   margin-bottom: 16px;
 }
 
+// Button used in the popup
 .popup-button {
   background-color: #7c3aed;
   color: white;
@@ -58,24 +63,38 @@
   }
 }
 
+// Title text inside the popup
 .popup-title {
   font-size: 22px;
   font-weight: 700;
   margin: 24px 0 12px;
 }
 
+// Body text inside the popup
 .popup-body p {
   font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
+// Fade-in animation for the overlay
 @keyframes fadeIn {
-  from { background-color: rgba(0, 0, 0, 0); }
-  to { background-color: rgba(0, 0, 0, 0.85); }
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
 }
 
+// Slide-up animation for popup content
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0px); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

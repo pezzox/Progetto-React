@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@mixin shared-title {
+  font-size: $title-font-size;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+@mixin centered-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}

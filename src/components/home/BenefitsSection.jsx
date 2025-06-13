@@ -1,5 +1,7 @@
 import './scss/BenefitsSection.scss'
+
 function BenefitsSection() {
+  // List of meditation benefits with icon, title and description
   const benefits = [
     {
       icon: "🧠",
@@ -42,13 +44,16 @@ function BenefitsSection() {
   return (
     <section className="benefits-section">
       <div className="container">
+        {/* Section title and introduction */}
         <div className="section-title">
           <h2>I Benefici della Meditazione</h2>
           <p>
-            La scienza conferma: la meditazione regolare trasforma corpo e mente, portando benefici duraturi nella vita
-            quotidiana.
+            La scienza conferma: la meditazione regolare trasforma corpo e mente,
+            portando benefici duraturi nella vita quotidiana.
           </p>
         </div>
+
+        {/* Grid displaying all benefit cards */}
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <div className="benefit-card" key={index}>

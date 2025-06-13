@@ -1,28 +1,49 @@
+@use '../../../styles/variables' as v;
 
+// Section for displaying a quote, centered with light background
 .quote-section {
   padding: 80px 0;
-  background: $background-light;
+  background: v.$background-light;
   text-align: center;
 
+  // Container for quote text and author
   .quote-content {
     max-width: 800px;
     margin: 0 auto;
 
+    // Main quote text
     .quote-text {
       font-size: 1.8rem;
       font-style: italic;
-      color: $text-dark;
+      color: v.$text-dark;
       margin-bottom: 20px;
       line-height: 1.4;
 
-      @media (max-width: $mobile) {
+      @media (max-width: v.$mobile) {
         font-size: 1.4rem;
+      }
+
+      // Fade-in animation for quote text
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
 
+    // Quote author styling
     .quote-author {
       font-size: 1.1rem;
-      color: $primary-color;
+      color: v.$primary-color;
       font-weight: 600;
     }
   }

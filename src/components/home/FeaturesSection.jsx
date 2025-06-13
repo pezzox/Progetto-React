@@ -1,8 +1,7 @@
-import './scss/FeaturesSection.scss';
-
-
+import './scss/FeaturesSection.scss'
 
 function FeaturesSection() {
+  // List of key features with icon, title, and description
   const features = [
     {
       icon: "⏱️",
@@ -29,10 +28,15 @@ function FeaturesSection() {
   return (
     <section className="features-section">
       <div className="container">
+        {/* Section title and subtitle */}
         <div className="section-title">
           <h2>Le Nostre Funzionalità</h2>
-          <p>Tutto ciò di cui hai bisogno per iniziare e mantenere una pratica meditativa costante e gratificante.</p>
+          <p>
+            Tutto ciò di cui hai bisogno per iniziare e mantenere una pratica meditativa costante e gratificante.
+          </p>
         </div>
+
+        {/* Feature cards grid */}
         <div className="features-grid">
           {features.map((feature, index) => (
             <div className="feature-item" key={index}>

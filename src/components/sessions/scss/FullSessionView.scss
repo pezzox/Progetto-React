@@ -1,3 +1,4 @@
+// Fullscreen container for the session
 .full-session {
   position: fixed;
   top: 0;
@@ -8,8 +9,7 @@
 }
 
 
-
-/* video come sfondo */
+// Video background layer
 .fullscreen-video {
   position: fixed; /* usa fixed, non absolute */
   top: 0;
@@ -21,7 +21,7 @@
 }
 
 
-/* tutti gli overlay sopra al video */
+// Exit button positioned over the video
 .exit-button {
   position: fixed;
   top: 30px;
@@ -36,6 +36,8 @@
   z-index: 2;
 }
 
+
+// Central overlay containing mantra and other elements
 .overlay-content {
   position: fixed;
   top: 50%;
@@ -48,6 +50,8 @@
   gap: 20px;
 }
 
+
+// Style for mantra text box
 .mantra {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px 30px;
@@ -59,6 +63,8 @@
   max-width: 80vw;
 }
 
+
+// Circular countdown timer block
 .timer-circle {
   position: fixed;
   top: 50%;
@@ -75,10 +81,71 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+
+// Time label inside timer circle
 .timer-label {
   position: absolute;
   font-size: 20px;
   color: white;
   font-weight: bold;
   text-shadow: 0 0 8px black;
+}
+
+
+// Volume slider control (bottom left)
+.volume-control {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  // Volume label
+  label {
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+  }
+
+  // Volume input slider
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 130px;
+    height: 6px;
+    background: #ffffff4d;
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s;
+
+    // Slider thumb for WebKit browsers
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+
+    // Slider thumb for Firefox
+    &::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
 }

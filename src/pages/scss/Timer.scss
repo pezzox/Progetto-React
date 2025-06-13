@@ -1,23 +1,27 @@
-@use '../../styles/main' as v;
+// Import variables directly (not from main)
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as *;
 
+
+// Main container for the timer page
 .timer-page {
   padding: v.$section-padding 0;
   min-height: 100vh;
   background: linear-gradient(to bottom, v.$background-light, v.$white);
+}
 
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: v.$text-dark;
-    font-size: 2.5rem;
+// Page heading
+h1  {
+  @include shared-title;  
+  @include centered-title;
 
-    @media (max-width: v.$mobile) {
-      font-size: 2rem;
-    }
+  @media (max-width: v.$mobile) {
+    font-size: 2rem;
   }
+}
 
-  .timer-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+// Container for the timer component
+.timer-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
