@@ -6,7 +6,7 @@ Mindful Moments è una web app per la meditazione che ti aiuta a coltivare benes
 
 ## 🌐 Link utili
 
-- **🔗 GitHub Repository**: _[inserisci qui il link al repository]_  
+- **🔗 GitHub Repository**: (https://github.com/pezzox)  
 - **🚀 Deploy Live**: _[inserisci qui il link al sito online]_
 
 ---
