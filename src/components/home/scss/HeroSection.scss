@@ -3,21 +3,23 @@
 // Hero section with full viewport height and layered background
 .hero {
   height: 100vh;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), // overlay
-    url("/images/hero-bg.jpg");
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../../assets/images/hero-bg.jpg");   
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: v.$white;
   position: relative;
-}
 
- // Main content block inside hero section
+  // Main content block inside hero section
   .hero-content {
     max-width: 800px;
     z-index: 2;
@@ -81,24 +83,36 @@
 
     // Arrow element inside scroll indicator
     .scroll-arrow {
-      width: 30px;
-      height: 30px;
-      border-right: 2px solid v.$white;
-      border-bottom: 2px solid v.$white;
-      transform: rotate(45deg);
-    }
-  }
+  width: 30px;
+  height: 30px;
+  border-left: 2px solid v.$white;
+  border-bottom: 2px solid v.$white; 
+  transform: rotate(-45deg); 
+ }
+  } 
+} 
 
-  // Keyframes for fade-in-up animation
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+// Keyframes for fade-in-up animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  
+// Keyframes for scroll-arrow bounce
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);  
+  }
+  40% {
+    transform: translateX(-50%) translateY(8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}

@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react"
-import useTimer from "../../hooks/useTimer"
+import useTimer from "../../hooks/useTimer" 
+
+import natureSound from "../../assets/sounds/nature.mp3"
+import rainSound from "../../assets/sounds/rain.mp3"
+import wavesSound from "../../assets/sounds/waves.mp3"
+import forestSound from "../../assets/sounds/forest.mp3"
 
 function MeditationTimer() {
   const [duration, setDuration] = useState(10)
@@ -8,16 +13,13 @@ function MeditationTimer() {
 
   // Reference to the audio element
   const audioRef = useRef(new Audio())
-
-  // Map each sound ID to a file path in /public/audio
   const soundFiles = {
-    nature: "/sounds/nature.mp3",
-    rain: "/sounds/rain.mp3",
-    waves: "/sounds/waves.mp3",
-    forest: "/sounds/forest.mp3",
-  }
+  nature: natureSound,
+  rain: rainSound,
+  waves: wavesSound,
+  forest: forestSound,
+}
 
-  // Play or stop audio when sound or timer state changes
  // Play or stop audio when sound or timer state changes
 useEffect(() => {
   const audio = audioRef.current

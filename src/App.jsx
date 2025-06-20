@@ -10,6 +10,11 @@ import Stats from "./pages/Stats";
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 
+import { BrowserRouter } from "react-router-dom";
+
+<BrowserRouter basename="/Progetto-React">
+  <App />
+</BrowserRouter>
 
 
 
